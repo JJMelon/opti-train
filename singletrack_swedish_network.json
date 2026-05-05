@@ -1,0 +1,62 @@
+{
+  "network": {
+    "id": "NET_SINGLETRACK_PASS",
+    "name": "Singletrack Passenger Table Network",
+    "version": "1.0",
+    "created": "2026-05-04T00:00:00Z",
+    "description": "Singletrack network derived from provided passenger travel-time table. Distances computed assuming free-running speed = 100 km/h."
+  },
+  "metadata": {
+    "crs": "EPSG:4326",
+    "units": "meters",
+    "timezone": "UTC",
+    "assumptions": {
+      "free_running_speed_kmh": 100,
+      "time_format": "M:SS (minutes:seconds) — middle column from table",
+      "block_length_meters": 100,
+      "note": "Track lengths recomputed from M:SS times and rounded to nearest 100 m."
+    }
+  },
+  "stations": [
+    {"id":"U","name":"U","coordinates":{"lat":40.000000,"lon":-75.0},"type":"terminal","capacity":10,"dwell_time_seconds":120},
+    {"id":"UNA","name":"UNA","coordinates":{"lat":40.022990,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"BNA","name":"BNA","coordinates":{"lat":40.085717,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"JLA","name":"JLA","coordinates":{"lat":40.160360,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"MA","name":"MA","coordinates":{"lat":40.246071,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"HY","name":"HY","coordinates":{"lat":40.284487,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"IST","name":"IST","coordinates":{"lat":40.325161,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"SL","name":"SL","coordinates":{"lat":40.375593,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"BDO","name":"BDO","coordinates":{"lat":40.436199,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"RY","name":"RY","coordinates":{"lat":40.503499,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"AVKY","name":"AVKY","coordinates":{"lat":40.573920,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"SNB","name":"SNB","coordinates":{"lat":40.660701,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"HDM","name":"HDM","coordinates":{"lat":40.731900,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"VHY","name":"VHY","coordinates":{"lat":40.775532,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"ST","name":"ST","coordinates":{"lat":40.835015,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"GTF","name":"GTF","coordinates":{"lat":40.904616,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"SAU","name":"SAU","coordinates":{"lat":40.944673,"lon":-75.0},"type":"station","capacity":1,"dwell_time_seconds":120},
+    {"id":"BLG","name":"BLG","coordinates":{"lat":41.000000,"lon":-75.0},"type":"terminal","capacity":10,"dwell_time_seconds":120}
+  ],
+  "tracks": [
+    {"id":"TRK_001","name":"U-UNA","from_id":"U","to_id":"UNA","type":"singletrack","length_meters":3200,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_002","name":"UNA-BNA","from_id":"UNA","to_id":"BNA","type":"singletrack","length_meters":8800,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_003","name":"BNA-JLA","from_id":"BNA","to_id":"JLA","type":"singletrack","length_meters":10500,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_004","name":"JLA-MA","from_id":"JLA","to_id":"MA","type":"singletrack","length_meters":12100,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_005","name":"MA-HY","from_id":"MA","to_id":"HY","type":"singletrack","length_meters":5400,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_006","name":"HY-IST","from_id":"HY","to_id":"IST","type":"singletrack","length_meters":5700,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_007","name":"IST-SL","from_id":"IST","to_id":"SL","type":"singletrack","length_meters":7100,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_008","name":"SL-BDO","from_id":"SL","to_id":"BDO","type":"singletrack","length_meters":8600,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_009","name":"BDO-RY","from_id":"BDO","to_id":"RY","type":"singletrack","length_meters":9500,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_010","name":"RY-AVKY","from_id":"RY","to_id":"AVKY","type":"singletrack","length_meters":10000,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_011","name":"AVKY-SNB","from_id":"AVKY","to_id":"SNB","type":"singletrack","length_meters":12300,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_012","name":"SNB-HDM","from_id":"SNB","to_id":"HDM","type":"singletrack","length_meters":10100,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_013","name":"HDM-VHY","from_id":"HDM","to_id":"VHY","type":"singletrack","length_meters":6000,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_014","name":"VHY-ST","from_id":"VHY","to_id":"ST","type":"singletrack","length_meters":8400,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_015","name":"ST-GTF","from_id":"ST","to_id":"GTF","type":"singletrack","length_meters":9800,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_016","name":"GTF-SAU","from_id":"GTF","to_id":"SAU","type":"singletrack","length_meters":5600,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}},
+    {"id":"TRK_017","name":"SAU-BLG","from_id":"SAU","to_id":"BLG","type":"singletrack","length_meters":7800,"properties":{"speed_limit_kmh":100,"bidirectional":true,"num_lanes":1},"capacity":{"max_trains":1}}
+  ],
+  "junctions": [],
+  "side_tracks": [],
+  "constraints": []
+}

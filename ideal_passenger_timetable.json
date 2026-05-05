@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "name": "Test Case A: Passenger Trains",
+    "source": "Table III screenshot",
+    "time_format": "HH:MM",
+    "notes": [
+      "t_best is the ideal departure time",
+      "t_min and t_max are minute buffers around t_best",
+      "v_dep is the departure profit",
+      "w_max is the maximum waiting time in minutes"
+    ]
+  },
+  "num_time_steps": 600,
+  "trains": [
+    {
+      "train_no": 1,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "06:30",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 2,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "08:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 3,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "10:30",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 4,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "12:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 5,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "15:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 6,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "16:30",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 7,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "19:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 8,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "20:30",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 9,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "08:30",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 10,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "10:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 11,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "12:30",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 12,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "14:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 13,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "17:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 14,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "18:30",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 15,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "21:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 16,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY"],
+      "t_best": "22:00",
+      "t_min": -15,
+      "t_max": 15,
+      "v_dep": 625,
+      "w_max": 5
+    },
+    {
+      "train_no": 17,
+      "from": "BLG",
+      "to": "U",
+      "compulsory_stop": ["SL", "AVKY", "HDM", "ST"],
+      "t_best": "07:10",
+      "t_min": -30,
+      "t_max": 30,
+      "v_dep": 500,
+      "w_max": 5
+    },
+    {
+      "train_no": 18,
+      "from": "U",
+      "to": "BLG",
+      "compulsory_stop": ["SL", "AVKY", "HDM", "ST"],
+      "t_best": "16:00",
+      "t_min": -30,
+      "t_max": 30,
+      "v_dep": 500,
+      "w_max": 5
+    }
+  ]
+}

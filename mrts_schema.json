@@ -1,0 +1,295 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Multi-Track Rail Network Standard (MRTS) v1.0",
+  "type": "object",
+  "required": ["network", "metadata", "stations", "tracks", "junctions"],
+  "properties": {
+    "network": {
+      "type": "object",
+      "required": ["id", "name", "version"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^NET_[A-Z0-9_]+$",
+          "description": "Unique network identifier"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+$"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "crs": {
+          "type": "string",
+          "description": "Coordinate Reference System (e.g., EPSG:4326)"
+        },
+        "units": {
+          "type": "string",
+          "enum": ["meters", "feet", "kilometers", "miles"]
+        },
+        "timezone": {
+          "type": "string"
+        }
+      }
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "coordinates", "type", "capacity"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^STN_[A-Z0-9_]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+                },
+                "length_meters": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "assigned_tracks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["track_id", "lane", "position"],
+                    "properties": {
+                      "track_id": {
+                        "type": "string"
+                      },
+                      "lane": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "position": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "coordinates": {
+            "type": "object",
+            "required": ["lat", "lon"],
+            "properties": {
+              "lat": {"type": "number"},
+              "lon": {"type": "number"}
+            }
+          },
+          "type": {
+            "type": "string",
+            "enum": ["terminal", "station", "junction"]
+          },
+          "capacity": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "dwell_time_seconds": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "custom_properties": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "from_id", "to_id", "type", "length_meters", "coordinates", "properties", "capacity"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^TRK_[A-Z0-9_]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "from_id": {
+            "type": "string"
+          },
+          "to_id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["main", "branch", "connector"]
+          },
+          "length_meters": {
+            "type": "number",
+            "minimum": 0
+          },
+          "coordinates": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["lat", "lon"],
+              "properties": {
+                "lat": {"type": "number"},
+                "lon": {"type": "number"}
+              }
+            }
+          },
+          "properties": {
+            "type": "object",
+            "required": ["speed_limit_kmh", "bidirectional", "num_lanes"],
+            "properties": {
+              "speed_limit_kmh": {"type": "integer", "minimum": 0},
+              "bidirectional": {"type": "boolean"},
+              "num_lanes": {"type": "integer", "minimum": 1}
+            }
+          },
+          "capacity": {
+            "type": "object",
+            "required": ["max_trains"],
+            "properties": {
+              "max_trains": {"type": "integer", "minimum": 1}
+            }
+          },
+          "multi_track": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "junctions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "coordinates", "connected_tracks"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^JCT_[A-Z0-9_]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "coordinates": {
+            "type": "object",
+            "required": ["lat", "lon"],
+            "properties": {
+              "lat": {"type": "number"},
+              "lon": {"type": "number"}
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "connected_tracks": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["track_id", "direction"],
+              "properties": {
+                "track_id": {"type": "string"},
+                "direction": {
+                  "type": "string",
+                  "enum": ["incoming", "outgoing", "bidirectional"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "side_tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "coordinates", "length_meters", "capacity", "connection_points", "properties"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^SID_[A-Z0-9_]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "coordinates": {
+            "type": "object",
+            "required": ["start", "end"],
+            "properties": {
+              "start": {
+                "type": "object",
+                "required": ["lat", "lon"]
+              },
+              "end": {
+                "type": "object",
+                "required": ["lat", "lon"]
+              }
+            }
+          },
+          "length_meters": {
+            "type": "number",
+            "minimum": 0
+          },
+          "capacity": {
+            "type": "object",
+            "required": ["max_trains"],
+            "properties": {
+              "max_trains": {"type": "integer", "minimum": 0}
+            }
+          },
+          "connection_points": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["connects_to", "type"],
+              "properties": {
+                "connects_to": {"type": "string"},
+                "junction_id": {"type": ["string", "null"]},
+                "type": {
+                  "type": "string",
+                  "enum": ["bidirectional", "one_way"]
+                }
+              }
+            }
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "parking_spots": {"type": "integer"}
+            }
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "track_id": {"type": "string"},
+          "station_id": {"type": "string"},
+          "min_headway_seconds": {"type": "integer", "minimum": 0},
+          "min_dwell_time_seconds": {"type": "integer", "minimum": 0},
+          "max_dwell_time_seconds": {"type": "integer", "minimum": 0}
+        }
+      }
+    }
+  }
+}
